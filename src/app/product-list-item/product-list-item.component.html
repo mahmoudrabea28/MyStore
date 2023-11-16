@@ -1,0 +1,21 @@
+<div class="product-container" >
+
+    <img (click)="adddetail(post)" routerLink="/productdetail" class="product-image" src="{{post.url}}" alt="">
+    <h6 style="margin-top: 20px; margin-bottom: 20px;">{{ post.name }}</h6>
+    <h6 style=" margin-bottom: 20px;">${{ post.price }}</h6>
+    <select (mouseout)="selectchange($event)" class="form-select" style=" margin-bottom: 8px;" name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <button (click)="tocart(post)" class="btn btn-primary">Add to cart</button>
+
+</div>
+

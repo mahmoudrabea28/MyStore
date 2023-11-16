@@ -1,0 +1,77 @@
+<div class="cart-container">
+
+  <div *ngIf="displaynam5" class="row">
+
+    <div *ngFor="let post of post" class="cart-item">
+
+      <img (click)="addde(post)" routerLink="/productdetail" class="img" src="{{post.url}}" alt="">
+      
+        <div style="justify-content: center;"  class="cart-item-details">
+
+            <h3 style=" justify-content: center;">{{ post.name }}</h3>
+            <h6 style="justify-content: center;">${{ post.price }}</h6>
+
+            <div style="justify-content: center;">
+
+            <div style="margin-bottom:5px; justify-content: center;">Amount</div>
+            
+              <input style="justify-content: center; margin-bottom: 3px;" (change)="update($event,post)" type="number" [value]="post.amount" class="number-input">
+              <!-- <button style="padding: 0px; width: 60px; height: 20px; font-size: 12px; " class="btn btn-primary">update</button> -->
+              <button style="margin-left: 1px; padding: 0px; width: 70px; height: 20px; font-size: 12px; " (click)="delete(post)" class="btn btn-primary">delete</button>
+            
+            </div>
+
+        </div>
+
+    </div>
+    
+      <div class="t">
+
+          <h1 *ngIf="displayname">Total:${{ re }} </h1>
+          <button class="tbutton" routerLink="/confirmationform"  (click)="confirm()" style="margin-bottom: 5px;width: 92px; " *ngIf="displayname3" class="btn btn-primary">
+            Confirm
+          </button>
+          <button class="tbutton"  style="margin-left: 5px; margin-bottom: 5px; width: 92px;" *ngIf="displayname2" (click)="deleteAll()" class="btn btn-primary">
+            Delete all
+          </button>
+
+      </div>
+
+    <h5  *ngIf="displayname1">Your Shopping Cart Is Empty</h5>
+
+  </div>
+
+  <div *ngIf="displayname4" class="form">
+
+    <form #form="ngForm" class="form-margin">
+
+      <div class="mb-3">
+
+        <label class="form-label">Full name</label>
+        <input  type="text" class="form-control" required minlength="3" placeholder="(minimum 3 characters)" (keyup)="namedata($event)">
+        
+      </div>
+
+      <div class="mb-3">
+
+          <label class="form-label">Address</label>
+          <input type="text" class="form-control" required minlength="6" placeholder="(minimum 6 characters)" (keyup)="addressdata($event)">
+
+      </div>
+
+      <div class="mb-3">
+
+        <label class="form-label">Credit card number</label>
+        <input type="number" class="form-control" required minlength="16" placeholder="(16-digt number)" (keyup)="passdata($event)">
+
+      </div>
+
+      <div class="form-text">We'll never share your email with anyone else.</div>
+
+      <input (click)="markedname()"  type="submit" [disabled]="disableinput" routerLink="/confirmation"  value="Submit" class="btn btn-primary" style="margin-top: 10px">
+
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,53 @@
+.header {
+
+    background: #33B5E5;
+    color: #fff;
+    padding: 12px;
+    height: 110px;
+  }
+
+h1{
+    font-size: 41px;
+  }
+.inside{
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+  }
+
+  a{
+    position: relative;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .cart-value{
+
+    position: absolute;
+    bottom: 12px;
+    left:  40px;
+    
+  }
+
+
+@media screen and (max-width: 548px) {
+      .header  {
+        height: 96px;
+      }
+      .inside{
+        height: 80px;
+        margin-right: 0%;
+      }
+      h1{
+        font-size: 35px;
+      }
+      a{
+        font-size: 14px;
+        margin-left: 0px;
+        text-decoration: underline;
+      }
+      .cart-value{
+        left: 34px;
+      }
+
+}
